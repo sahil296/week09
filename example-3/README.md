@@ -11,7 +11,7 @@
   cd week09/example-3/backend/product_service
 
   # Build the Docker image (ensure your Dockerfile is in this directory)
-  docker build -t YOUR_ACR_NAME/product-service:latest .
+  docker build -t snweek09acr6613.azurecr.io/product-service:latest .
 
   # Log in to ACR
   az acr login --username YOUR_ACR_USERNAME --password YOUR_ACR_PASSWORD
@@ -21,8 +21,8 @@
 
   # Repeat for order_service
   cd ../order_service
-  docker build -t YOUR_ACR_NAME/order-service:latest .
-  docker push YOUR_ACR_NAME/order-service:latest
+  docker build -t snweek09acr6613.azurecr.io/order-service:latest .
+  docker push snweek09acr6613.azurecr.io/order-service:latest
   ```
 
 - **NOTE** : Replace `YOUR_ACR_NAME` with the actual name of your Azure Container Registry.

@@ -20,12 +20,14 @@ spec:
         prometheus.io/path: '/metrics' # The path where metrics are exposed
         prometheus.io/port: '8000' # The port where metrics are exposed on the container
     spec:
+      imagePullSecrets:
+      - name: acr-secret
       containers:
       - name: order-service-container
-        image: <AZURE_ACR>/order:latest
+        image: snweek09acr6613.azurecr.io/order-service:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 8001
+        - containerPort: 8000
         env:
         - name: POSTGRES_HOST
           value: order-db-service-w09-aks
